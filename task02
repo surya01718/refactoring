@@ -1,0 +1,41 @@
+                 +---------------------+
+                 |      CarService     |
+                 +---------------------+
+                 |                     |
+                 |+addServiceCriteria()|
+                 |+removeServiceCriteria()|
+                 |+getServiceCriteria()|
+                 +---------------------+
+                           /_\
+                            |
+         +--------------------------------------+
+         |                                      |
+         v                                      v
++---------------------+             +---------------------+
+|   ServiceCriteria   |             |     CarModel        |
++---------------------+             +---------------------+
+| - criteriaId        |             | - modelId           |
+| - criteriaName      |             | - modelName         |
+| - partsIncluded[]   |<------------| - partsIncluded[]   |
++---------------------+             +---------------------+
+| +getCriteriaId()    |             | +getModelId()       |
+| +getCriteriaName()  |             | +getModelName()     |
+| +setCriteriaId()    |             | +setModelId()       |
+| +setCriteriaName()  |             | +setModelName()     |
+| +addPartIncluded()  |             | +addPartIncluded()  |
+| +removePartIncluded()|             | +removePartIncluded()|
+| +getPartsIncluded() |             | +getPartsIncluded() |
++---------------------+             +---------------------+
+               ^
+                \
+                 |  1..*    +---------------------+
+                 +--------->|      CarPart        |
+                            +---------------------+
+                            | - partId            |
+                            | - partName          |
+                            +---------------------+
+                            | +getPartId()        |
+                            | +getPartName()      |
+                            | +setPartId()        |
+                            | +setPartName()      |
+                            +---------------------+
