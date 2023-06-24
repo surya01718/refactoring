@@ -1,0 +1,20 @@
+import unittest
+from car_service import CarModel, CarPart, Engine, Battery
+class CarServiceTests(unittest.TestCase):
+    pass
+class CarServiceTests(unittest.TestCase):
+    def test_engine(self):
+        pass
+
+    def test_battery(self):
+        pass
+class CarServiceTests(unittest.TestCase):
+    def test_engine(self):
+        engine = Engine('V6')
+        self.assertEqual(engine.getEngineType(), 'V6')
+
+    def test_battery(self):
+        battery = Battery('Lithium-ion')
+        self.assertEqual(battery.getBatteryType(), 'Lithium-ion')
+if __name__ == '__main__':
+    unittest.main()
