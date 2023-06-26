@@ -1,0 +1,37 @@
+def test_spindler_battery_service(self):
+    battery = Battery('Spindler')
+    self.assertFalse(battery.needsService(2))
+    self.assertTrue(battery.needsService(3))
+class Battery:
+    # Existing code...
+
+    def needsService(self, years):
+        if self.batteryType == 'Spindler':
+            return years >= 3
+        else:
+            return years >= 2
+def test_carrigan_tire_service(self):
+    factory = CarFactory()
+    tire_wear = [0.5, 0.8, 0.9, 0.7]
+    self.assertFalse(factory.needsTireService('Carrigan', tire_wear))
+
+    tire_wear = [0.9, 0.5, 0.7, 0.8]
+    self.assertTrue(factory.needsTireService('Carrigan', tire_wear))
+
+def test_octoprime_tire_service(self):
+    factory = CarFactory()
+    tire_wear = [0.5, 0.8, 0.9, 0.7]
+    self.assertFalse(factory.needsTireService('Octoprime', tire_wear))
+
+    tire_wear = [0.9, 0.8, 1.0, 0.7]
+    self.assertTrue(factory.needsTireService('Octoprime', tire_wear))
+class CarFactory:
+    # Existing code...
+
+    def needsTireService(self, tire_type, tire_wear):
+        if tire_type == 'Carrigan':
+            return any(wear >= 0.9 for wear in tire_wear)
+        elif tire_type == 'Octoprime':
+            return sum(tire_wear) >= 3
+        else:
+            return False
